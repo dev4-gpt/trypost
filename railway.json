@@ -3,5 +3,8 @@
   "build": {
     "builder": "DOCKERFILE",
     "dockerfilePath": "docker/Dockerfile"
+  },
+  "deploy": {
+    "preDeployCommand": "php artisan package:discover --ansi"
   }
 }
