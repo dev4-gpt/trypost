@@ -199,7 +199,7 @@ COPY --from=asset-build /var/www/html /var/www/html
 # deps and recorded providers (Pail, Telescope etc) that no longer exist;
 # Laravel rediscovers cleanly at first boot.
 RUN rm -rf /var/www/html/vendor /var/www/html/bootstrap/cache/*.php
-COPY --from=composer-deps-prod /var/www/html/vendor /var/www/html/vendor
+COPY --from=composer-deps /var/www/html/vendor /var/www/html/vendor
 
 RUN composer dump-autoload --optimize --classmap-authoritative --no-scripts \
     && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
