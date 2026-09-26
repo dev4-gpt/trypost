@@ -240,37 +240,10 @@ return [
             'tries' => 1,
             'nice' => 0,
         ],
-
-        'ai-assistant' => [
-            'connection' => 'redis',
-            'queue' => ['ai'],
-            'balance' => 'auto',
-            'autoScalingStrategy' => 'time',
-            'minProcesses' => 1,
-            'maxProcesses' => 2,
-            'timeout' => 930,
-            'maxTime' => 0,
-            'maxJobs' => 0,
-            'memory' => 512,
-            'tries' => 1,
-            'nice' => 0,
-        ],
-
-        'webhooks' => [
-            'connection' => 'redis',
-            'queue' => ['webhooks'],
-            'balance' => 'auto',
-            'autoScalingStrategy' => 'time',
-            'minProcesses' => 1,
-            'maxProcesses' => 2,
-            'timeout' => 60,
-            'maxTime' => 0,
-            'maxJobs' => 0,
-            'memory' => 256,
-            'tries' => 1,
-            'nice' => 0,
-        ],
     ],
+
+    // StratosGTM (1GB memory cap): the ai-assistant and webhooks worker groups were removed from defaults;
+    // this Horizon version starts every group in defaults in all environments.
 
     'environments' => [
         'production' => [
