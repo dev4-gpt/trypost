@@ -275,28 +275,17 @@ return [
     'environments' => [
         'production' => [
             'supervisor-1' => [
-                'maxProcesses' => 10,
+                'maxProcesses' => 1,
                 'balanceMaxShift' => 1,
                 'balanceCooldown' => 3,
             ],
 
             'social-publishing' => [
-                'maxProcesses' => 10,
+                'maxProcesses' => 2,
                 'balanceMaxShift' => 1,
                 'balanceCooldown' => 3,
             ],
-
-            'ai-assistant' => [
-                'maxProcesses' => 5,
-                'balanceMaxShift' => 1,
-                'balanceCooldown' => 3,
-            ],
-
-            'webhooks' => [
-                'maxProcesses' => 3,
-                'balanceMaxShift' => 1,
-                'balanceCooldown' => 3,
-            ],
+            // StratosGTM (1GB memory cap): ai-assistant and webhooks workers are not started in production.
         ],
 
         'local' => [
