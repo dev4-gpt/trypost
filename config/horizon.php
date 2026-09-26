@@ -248,7 +248,7 @@ return [
     'environments' => [
         'production' => [
             'supervisor-1' => [
-                'maxProcesses' => 1,
+                'maxProcesses' => 3,
                 'balanceMaxShift' => 1,
                 'balanceCooldown' => 3,
             ],
@@ -268,14 +268,6 @@ return [
 
             'social-publishing' => [
                 'maxProcesses' => 3,
-            ],
-
-            'ai-assistant' => [
-                'maxProcesses' => 2,
-            ],
-
-            'webhooks' => [
-                'maxProcesses' => 1,
             ],
         ],
     ],
